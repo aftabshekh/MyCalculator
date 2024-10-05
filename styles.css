@@ -1,0 +1,106 @@
+/* styles.css */
+
+/* Define primary and accent colors */
+:root {
+    --primary-bg: #333;
+    --primary-text: #fff;
+    --accent-color: #f0a500;
+    --operator-color: #555;
+    --button-hover: #444;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Calculator container */
+.calculator {
+    background-color: var(--primary-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    width: 350px;
+}
+
+/* Display styling */
+.display {
+    margin-bottom: 15px;
+}
+
+#result {
+    width: 100%;
+    height: 60px;
+    font-size: 2.5em;
+    text-align: right;
+    padding: 10px;
+    background-color: #000;
+    color: var(--primary-text);
+    border: none;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Button grid layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    background-color: var(--operator-color);
+    color: var(--primary-text);
+    font-size: 1.5em;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Operator and equal button styling */
+.operator {
+    background-color: var(--accent-color);
+}
+
+.equals {
+    background-color: var(--accent-color);
+    grid-column: span 2;
+}
+
+/* Clear, delete, and zero button styling */
+.clear, .delete {
+    background-color: #ff6347;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    #result {
+        font-size: 2em;
+        height: 50px;
+    }
+}
